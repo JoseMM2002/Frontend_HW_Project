@@ -1,6 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+    @font-face {
+        font-family: 'ATM';
+        src: url('/src/assets/fonts/BigBlueTerm437NerdFont-Regular.ttf') format('truetype');
+    }
+}
+
 html, body, #root {
     height: 100%;
 }
@@ -31,4 +39,17 @@ html, body, #root {
 
 .visa-positioning {
     background-position-x: 29px;
+}
+
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.cursor {
+    display: inline-block;
+    width: 0.7ch;
+    background-color: #fff;
+    animation: blink 1s step-start infinite;
 }

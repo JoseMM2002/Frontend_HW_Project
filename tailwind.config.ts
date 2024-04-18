@@ -9,6 +9,9 @@ export default {
       extend: {
         backgroundImage: {
             'credit-types': "url('/src/assets/creditcard_sprite.png')"
+        },
+        fontFamily: {
+            atm: 'ATM'
         }
       },
       colors: {
