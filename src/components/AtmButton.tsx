@@ -1,27 +1,32 @@
 import type React from "react";
 
-interface AtmButtonProps {
+export interface AtmButtonProps {
     position: "left" | "right";
-    callback: () => Promise<void>;
+    callback?: () => Promise<void>;
 }
 
-const AtmButton: React.FC<AtmButtonProps> = ({ position }) => {
+const AtmButton: React.FC<AtmButtonProps> = ({ position, callback }) => {
     const positionClass = {
-        left: "left-full",
-        right: "right-full",
+        left: "right-full",
+        right: "left-full",
     }[position];
 
     return (
         <>
-            <div className="px-5">
-                <button className="px-10 py-6 bg-neutral-3 rounded-lg relative">
-                    <div className="absolute bg-neutral-1 top-[-6px] px-10 py-6 left-0 rounded-lg"></div>
-                    <div className="absolute bg-neutral-2 top-0 px-10 py-[21px] left-0 rounded-lg"></div>
-                    <div
-                        className={`absolute bg-neutral-3 px-5 py-1 ${positionClass} top-1/3`}
-                    ></div>
-                </button>
-            </div>
+            <button
+                className="mx-1 w-3 h-1 bg-neutral-3 relative"
+                onClick={() => {
+                    if (callback) callback();
+                }}
+            >
+                <div className={`${positionClass} absolute h-5 w-8 top-[-8px]`}>
+                    <div className="w-full h-full relative">
+                        <div className="absolute bg-neutral-1 rounded-sm top-[-2px] h-5 w-8"></div>
+                        <div className="absolute bg-neutral-3 rounded-sm top-[2px] h-5 w-8"></div>
+                        <div className="absolute bg-neutral-2 rounded-sm top-0 h-5 w-8"></div>
+                    </div>
+                </div>
+            </button>
         </>
     );
 };
