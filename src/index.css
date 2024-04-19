@@ -13,10 +13,6 @@ html, body, #root {
     height: 100%;
 }
 
-.credit-card-positioning {
-    background-position-y: 3px;
-}
-
 .star-positioning {
     background-position-x: 0;
 }
