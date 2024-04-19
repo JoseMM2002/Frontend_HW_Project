@@ -19,11 +19,13 @@ const AtmButton: React.FC<AtmButtonProps> = ({ position, callback }) => {
                     if (callback) callback();
                 }}
             >
-                <div className={`${positionClass} absolute h-5 w-8 top-[-8px]`}>
+                <div
+                    className={`${positionClass} absolute h-5 w-10 top-[-8px]`}
+                >
                     <div className="w-full h-full relative">
-                        <div className="absolute bg-neutral-1 rounded-sm top-[-2px] h-5 w-8"></div>
-                        <div className="absolute bg-neutral-3 rounded-sm top-[2px] h-5 w-8"></div>
-                        <div className="absolute bg-neutral-2 rounded-sm top-0 h-5 w-8"></div>
+                        <div className="absolute bg-neutral-1 rounded-sm top-[-2px] h-5 w-10"></div>
+                        <div className="absolute bg-neutral-3 rounded-sm top-[2px] h-5 w-10"></div>
+                        <div className="absolute bg-neutral-2 rounded-sm top-0 h-5 w-10"></div>
                     </div>
                 </div>
             </button>
