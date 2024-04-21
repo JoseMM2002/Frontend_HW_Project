@@ -4,7 +4,7 @@ import { AtmOption, AtmState } from ".";
 import { CardAuthResponse } from "./types";
 
 import { depositInput } from "./inputs/depositInput";
-import { withdrawInput } from "./inputs/widthrawInput";
+import { withdrawInput } from "./inputs/widthrawaInput";
 import { balanceInput } from "./inputs/balanceInput";
 import { exitInput } from "./inputs/exitInput";
 
