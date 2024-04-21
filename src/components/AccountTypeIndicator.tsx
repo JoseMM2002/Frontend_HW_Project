@@ -1,7 +1,9 @@
-import type { CardType } from "src/constants/CardTypes";
+import { AccountType } from "src/constants/AccountTypes";
 
-const CardTypeIndicator: React.FC<{ cardType: CardType }> = ({ cardType }) => {
-    const positioning: Record<CardType, string> = {
+const CardTypeIndicator: React.FC<{ accountType: AccountType }> = ({
+    accountType: cardType,
+}) => {
+    const positioning: Record<AccountType, string> = {
         NONE: "w-0",
         STAR: "w-[29px] left-0 star-positioning",
         PULSE: "w-[45px] left-[38px] pulse-positioning",
